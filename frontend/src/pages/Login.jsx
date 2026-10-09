@@ -1,23 +1,30 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { api } from '../api.js';
+import { deriveKeyHex } from '../crypto.js';
 
 export default function Login({ setSession }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [busy, setBusy] = useState(false);
   const navigate = useNavigate();
 
   async function submit(e) {
     e.preventDefault();
     setError('');
+    setBusy(true);
     try {
       const data = await api('/auth/login', 'POST', { email, password });
-      // Memory only. In Stage 7 the encryption key is derived from these.
-      setSession({ email, masterPassword: password, kdfSalt: data.kdf_salt });
+      // Derive the non-extractable AES key now, then keep only the key in memory.
+      const key = await deriveKeyHex(password, data.kdf_salt);
+      setPassword('');
+      setSession({ email, key });
       navigate('/dashboard');
     } catch (err) {
       setError(err.message);
+    } finally {
+      setBusy(false);
     }
   }
 
@@ -27,7 +34,7 @@ export default function Login({ setSession }) {
       <form onSubmit={submit}>
         <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
         <input type="password" placeholder="Master password" value={password} onChange={e => setPassword(e.target.value)} required />
-        <button type="submit">Login</button>
+        <button type="submit" disabled={busy}>{busy ? 'Unlocking...' : 'Login'}</button>
       </form>
       {error && <p className="error">{error}</p>}
       <p>No account? <Link to="/register">Register</Link></p>
