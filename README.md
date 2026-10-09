@@ -6,7 +6,11 @@ A full stack password manager with client-side encryption, 2FA, security testing
 - Registration and login with bcrypt hashing
 - Rate limiting and account lockout
 - Audit logs
-- (Coming soon) Client-side AES-256-GCM encryption, TOTP 2FA, breach check, password generator
+- Client-side AES-256-GCM encryption (key derived in the browser with PBKDF2-SHA256, 600,000 iterations; the server only stores ciphertext)
+- Secure password generator (crypto.getRandomValues, no modulo bias)
+- Password strength meter
+- Breach check using Have I Been Pwned (k-anonymity: only the first 5 characters of the SHA-1 hash are sent)
+- (Coming soon) TOTP 2FA
 
 ## Tech Stack
 React (Vite), Node.js, Express, SQLite
@@ -18,6 +22,7 @@ React (Vite), Node.js, Express, SQLite
 
 ## Limitations
 Educational project. Runs over HTTP in development and is not audited for production.
+The master password is sent to the server for login (bcrypt check), and the server stores the KDF salt, so this is not true zero-knowledge. A planned hardening step is to derive separate auth and encryption keys in the browser.
 
 ## Author
 Samiksha S Shetty
