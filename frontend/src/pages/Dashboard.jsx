@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { api } from '../api.js';
 import { encryptText, decryptText } from '../crypto.js';
 import { generatePassword, passwordStrength, checkBreach } from '../tools.js';
+import TwoFactor from './TwoFactor.jsx';
 
 export default function Dashboard({ session, setSession }) {
   const [entries, setEntries] = useState([]);
@@ -92,7 +93,9 @@ export default function Dashboard({ session, setSession }) {
   return (
     <div className="box wide">
       <h2>My Vault <small>({session.email})</small></h2>
-      <button onClick={logout}>Logout</button>
+            <button onClick={logout}>Logout</button>
+
+            <TwoFactor />
 
       <h3>Add entry</h3>
       <form onSubmit={add}>
