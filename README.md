@@ -11,6 +11,7 @@ A full stack password manager with client-side encryption, 2FA, security testing
 - Password strength meter
 - Breach check using Have I Been Pwned (k-anonymity: only the first 5 characters of the SHA-1 hash are sent)
 - TOTP two-factor authentication (RFC 6238, compatible with Google/Microsoft Authenticator); failed 2FA codes count toward the account lockout
+- Key derivation benchmark (PBKDF2 vs scrypt vs Argon2id) in /benchmark; run with `cd benchmark`, `npm install`, `node bench.js`
 
 ## Tech Stack
 React (Vite), Node.js, Express, SQLite

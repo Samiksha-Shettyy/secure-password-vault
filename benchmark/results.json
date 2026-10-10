@@ -1,0 +1,82 @@
+[
+  {
+    "Algorithm": "PBKDF2-SHA256",
+    "Parameters": "iterations=100,000",
+    "Memory (MB)": 0,
+    "Avg (ms)": 94,
+    "Min (ms)": 74,
+    "Max (ms)": 115
+  },
+  {
+    "Algorithm": "PBKDF2-SHA256",
+    "Parameters": "iterations=310,000",
+    "Memory (MB)": 0,
+    "Avg (ms)": 388,
+    "Min (ms)": 315,
+    "Max (ms)": 443
+  },
+  {
+    "Algorithm": "PBKDF2-SHA256",
+    "Parameters": "iterations=600,000",
+    "Memory (MB)": 0,
+    "Avg (ms)": 416,
+    "Min (ms)": 358,
+    "Max (ms)": 457
+  },
+  {
+    "Algorithm": "PBKDF2-SHA256",
+    "Parameters": "iterations=1,000,000",
+    "Memory (MB)": 0,
+    "Avg (ms)": 647,
+    "Min (ms)": 529,
+    "Max (ms)": 766
+  },
+  {
+    "Algorithm": "scrypt",
+    "Parameters": "N=2^14, r=8, p=1",
+    "Memory (MB)": 16,
+    "Avg (ms)": 67,
+    "Min (ms)": 57,
+    "Max (ms)": 77
+  },
+  {
+    "Algorithm": "scrypt",
+    "Parameters": "N=2^15, r=8, p=1",
+    "Memory (MB)": 32,
+    "Avg (ms)": 123,
+    "Min (ms)": 88,
+    "Max (ms)": 151
+  },
+  {
+    "Algorithm": "scrypt",
+    "Parameters": "N=2^16, r=8, p=1",
+    "Memory (MB)": 64,
+    "Avg (ms)": 268,
+    "Min (ms)": 243,
+    "Max (ms)": 324
+  },
+  {
+    "Algorithm": "Argon2id",
+    "Parameters": "m=19456 KiB, t=2, p=1",
+    "Memory (MB)": 19,
+    "Avg (ms)": 48,
+    "Min (ms)": 37,
+    "Max (ms)": 60
+  },
+  {
+    "Algorithm": "Argon2id",
+    "Parameters": "m=46080 KiB, t=1, p=1",
+    "Memory (MB)": 45,
+    "Avg (ms)": 69,
+    "Min (ms)": 55,
+    "Max (ms)": 81
+  },
+  {
+    "Algorithm": "Argon2id",
+    "Parameters": "m=65536 KiB, t=3, p=1",
+    "Memory (MB)": 64,
+    "Avg (ms)": 233,
+    "Min (ms)": 197,
+    "Max (ms)": 258
+  }
+]
