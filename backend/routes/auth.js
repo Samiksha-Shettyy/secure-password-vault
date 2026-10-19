@@ -14,6 +14,13 @@ authenticator.options = { window: 1 }; // accept the previous/next 30s code (clo
 
 const loginLimiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 20 });
 
+const registerLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  max: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
 const schema = z.object({
   email: z.string().email(),
   password: z.string().min(10).max(128),
@@ -31,7 +38,7 @@ function verifyTotp(code, secret) {
   }
 }
 
-router.post('/register', (req, res) => {
+router.post('/register', registerLimiter, (req, res) => {
   const parsed = schema.safeParse(req.body);
   if (!parsed.success) return res.status(400).json({ error: 'Invalid input' });
   const { email, password } = parsed.data;
