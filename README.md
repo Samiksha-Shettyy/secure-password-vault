@@ -14,6 +14,15 @@ Secure Password Vault: a full-stack password manager with client-side encryption
 - Key derivation benchmark (PBKDF2 vs scrypt vs Argon2id)
 - Security testing: a repeatable audit script with before/after results
 
+## Screenshots
+![Dashboard](docs/dashboard.png)
+
+![Encrypted vault rows in the database](docs/encrypted-db.png)
+
+![KDF benchmark](docs/benchmark.png)
+
+![Security audit before/after](docs/audit-comparison.png)
+
 ## Tech Stack
 React (Vite), Node.js, Express, SQLite
 

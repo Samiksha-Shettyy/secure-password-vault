@@ -3,80 +3,80 @@
     "Algorithm": "PBKDF2-SHA256",
     "Parameters": "iterations=100,000",
     "Memory (MB)": 0,
-    "Avg (ms)": 212,
-    "Min (ms)": 147,
-    "Max (ms)": 314
+    "Avg (ms)": 40,
+    "Min (ms)": 39,
+    "Max (ms)": 43
   },
   {
     "Algorithm": "PBKDF2-SHA256",
     "Parameters": "iterations=310,000",
     "Memory (MB)": 0,
-    "Avg (ms)": 437,
-    "Min (ms)": 368,
-    "Max (ms)": 526
+    "Avg (ms)": 135,
+    "Min (ms)": 124,
+    "Max (ms)": 158
   },
   {
     "Algorithm": "PBKDF2-SHA256",
     "Parameters": "iterations=600,000",
     "Memory (MB)": 0,
-    "Avg (ms)": 792,
-    "Min (ms)": 715,
-    "Max (ms)": 916
+    "Avg (ms)": 262,
+    "Min (ms)": 240,
+    "Max (ms)": 288
   },
   {
     "Algorithm": "PBKDF2-SHA256",
     "Parameters": "iterations=1,000,000",
     "Memory (MB)": 0,
-    "Avg (ms)": 1537,
-    "Min (ms)": 1411,
-    "Max (ms)": 1840
+    "Avg (ms)": 435,
+    "Min (ms)": 401,
+    "Max (ms)": 476
   },
   {
     "Algorithm": "scrypt",
     "Parameters": "N=2^14, r=8, p=1",
     "Memory (MB)": 16,
-    "Avg (ms)": 111,
-    "Min (ms)": 88,
-    "Max (ms)": 133
+    "Avg (ms)": 34,
+    "Min (ms)": 33,
+    "Max (ms)": 36
   },
   {
     "Algorithm": "scrypt",
     "Parameters": "N=2^15, r=8, p=1",
     "Memory (MB)": 32,
-    "Avg (ms)": 214,
-    "Min (ms)": 187,
-    "Max (ms)": 255
+    "Avg (ms)": 74,
+    "Min (ms)": 69,
+    "Max (ms)": 91
   },
   {
     "Algorithm": "scrypt",
     "Parameters": "N=2^16, r=8, p=1",
     "Memory (MB)": 64,
-    "Avg (ms)": 462,
-    "Min (ms)": 397,
-    "Max (ms)": 513
+    "Avg (ms)": 161,
+    "Min (ms)": 141,
+    "Max (ms)": 174
   },
   {
     "Algorithm": "Argon2id",
     "Parameters": "m=19456 KiB, t=2, p=1",
     "Memory (MB)": 19,
-    "Avg (ms)": 117,
-    "Min (ms)": 100,
-    "Max (ms)": 141
+    "Avg (ms)": 32,
+    "Min (ms)": 30,
+    "Max (ms)": 33
   },
   {
     "Algorithm": "Argon2id",
     "Parameters": "m=46080 KiB, t=1, p=1",
     "Memory (MB)": 45,
-    "Avg (ms)": 211,
-    "Min (ms)": 137,
-    "Max (ms)": 270
+    "Avg (ms)": 42,
+    "Min (ms)": 39,
+    "Max (ms)": 45
   },
   {
     "Algorithm": "Argon2id",
     "Parameters": "m=65536 KiB, t=3, p=1",
     "Memory (MB)": 64,
-    "Avg (ms)": 369,
-    "Min (ms)": 312,
-    "Max (ms)": 452
+    "Avg (ms)": 147,
+    "Min (ms)": 144,
+    "Max (ms)": 149
   }
 ]
